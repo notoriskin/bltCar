@@ -1,4 +1,4 @@
-# 🚗 blt42039Car – Arduino Nano Bluetooth Car with LEGO Integration
+# 🚗 bltCar – Arduino Nano Bluetooth Car with LEGO Integration
 
 A **Bluetooth-controlled Arduino Nano car** featuring **toggle-based steering and driving**, designed to be embedded inside a **LEGO Technic 42039 Race Car Truck**. This project demonstrates modular robotics using LEGO Technic, DC motors, and servos, all controlled via a smartphone over Bluetooth.
 
