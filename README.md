@@ -1,4 +1,4 @@
-# 🚗 bltCar – Arduino Nano Bluetooth Car with LEGO Integration
+# 🚗 blt42039Car – Arduino Nano Bluetooth Car with LEGO Integration
 
 A **Bluetooth-controlled Arduino Nano car** featuring **toggle-based steering and driving**, designed to be embedded inside a **LEGO Technic 42039 Race Car Truck**. This project demonstrates modular robotics using LEGO Technic, DC motors, and servos, all controlled via a smartphone over Bluetooth.
 
@@ -17,17 +17,20 @@ This DIY smart car project enables remote steering and movement via a mobile dev
 ## 🔌 Key Components
 
 - 🧠 **Arduino Nano** (space-saving form factor)  
-- 📡 **HM-10 Bluetooth Module** (BLE)  
-- ⚡ **L298N Dual H-Bridge Motor Driver**  
-- 🔄 **Servo motor** (steering)  
-- 🚗 **4x DC Motors** (driving)  
+- 📡 **HC-05 Bluetooth Module** (BLE)  
+- ⚡ **L9110 Motor Driver**  
+- 🔄 **fake Lego Servo motor** (steering)(by fake I mean that they not actually servo, as well as the fact they are knockoffs)) 
+- 🚗 **Lego DC Motor** (driving)  
 - 🔋 **2x 18650 Li-ion battery pack (7.4V)**  
 - 🧱 **LEGO Technic 42039 Chassis**  
-- 📱 **Android device** with Bluetooth serial controller
+- 📱 **Android device** with Bluetooth serial controller (works better on Android, but Dabble app can be configured on iphone too)
 
 ---
 
 ## ⚙️ Wiring Schematics
+![buttonsLR](https://github.com/user-attachments/assets/2e4d7d4e-328a-4f83-b655-cd2486d4a4cb)
+<img width="989" alt="bltCar" src="https://github.com/user-attachments/assets/ba9621ff-ebb3-4107-84a1-5d0cc7524afd" />
+<img width="732" alt="  2025-04-24 at 11 46 37 AM" src="https://github.com/user-attachments/assets/3861884f-0e91-4a48-a7c9-81120afd7546" />
 
 ### 🧠 Steering + Logic Circuit
 
@@ -49,13 +52,13 @@ Real Arduino Nano-based prototype controlling motor/steering through Bluetooth s
 
 ## 📲 Control Workflow
 
-1. **Pair your Android phone** with the HM-10 module  
+1. **Pair your Android phone** with the HM-10/HC-05 module  
 2. **Launch Bluetooth serial controller app**  
 3. Send characters like:
-   - `"F"` → Forward  
-   - `"B"` → Backward  
-   - `"L"` / `"R"` → Steering toggle  
-   - `"S"` → Stop  
+   - `"f"` → Forward  
+   - `"b"` → Backward  
+   - `"l"` / `"R"` → Steering toggle  
+   - `"s"` → Stop  
 
 Arduino parses these to update motor/servo states.
 
@@ -68,11 +71,3 @@ Arduino parses these to update motor/servo states.
 - 🔄 Control servo and DC motors together  
 - 🧱 Repurpose LEGO Technic into a robotics platform  
 - 🎮 Create your own control protocol
-
----
-
-## 📁 Project Structure
-Schematics:
-![buttonsLR](https://github.com/user-attachments/assets/2e4d7d4e-328a-4f83-b655-cd2486d4a4cb)
-<img width="989" alt="bltCar" src="https://github.com/user-attachments/assets/ba9621ff-ebb3-4107-84a1-5d0cc7524afd" />
-<img width="732" alt="  2025-04-24 at 11 46 37 AM" src="https://github.com/user-attachments/assets/3861884f-0e91-4a48-a7c9-81120afd7546" />
