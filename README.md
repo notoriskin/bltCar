@@ -1,73 +1,63 @@
-# 🚗 bltCar – Arduino Nano Bluetooth Car with LEGO Integration
+🛡️ bltTank – Arduino Nano Bluetooth Tank with Dual Motor Control
 
-A **Bluetooth-controlled Arduino Nano car** featuring **toggle-based steering and driving**, designed to be embedded inside a **LEGO Technic 42039 Race Car Truck**. This project demonstrates modular robotics using LEGO Technic, DC motors, and servos, all controlled via a smartphone over Bluetooth.
+A Bluetooth-controlled Arduino Nano tank built on a crawler chassis, powered by 2 motor control for steering and movement. Like its sibling project bltCar, it uses the HC-05 Bluetooth module and a custom smartphone app for remote control.
 
----
+⸻
 
-## 🧭 Project Summary
+🧭 Project Summary
 
-This DIY smart car project enables remote steering and movement via a mobile device using an **HM-10 Bluetooth module**. It integrates:
+This tracked vehicle offers precise control via phone using simple serial commands. Featuring:
+	•	🛞 Dual DC motor drive for tank-like maneuvering (turns by rotating wheels in opposite directions)
+	•	🧠 Arduino Nano brain for compact embedded control
+	•	📱 Bluetooth control using a custom bltTank app or serial controller
 
-- 🚙 **Steering control** using servo motors  
-- ⚙️ **Drive control** using an L298N motor driver  
-- 🧩 **LEGO chassis integration** with the Technic 42039 for a durable and modular frame
+⸻
 
----
+🔌 Key Components
+	•	🧠 Arduino Nano
+	•	📡 HC-05 Bluetooth Module
+	•	⚡ L298N Dual H-Bridge Motor Driver
+	•	🛞 2x DC Motors (one per track [diaganally from each other])
+	•	🔋 2x 18650 Li-ion battery pack (7.4V)
+	•	🦾 Crawler Tank Chassis (eBay/AliExpress generic)
+ 
+⸻
 
-## 🔌 Key Components
+⚙️ Wiring Schematics
 
-- 🧠 **Arduino Nano** (space-saving form factor)  
-- 📡 **HC-05 Bluetooth Module** (BLE)  
-- ⚡ **L9110 Motor Driver**  
-- 🔄 **fake Lego Servo motor** (steering)(by fake I mean that they not actually servo, as well as the fact they are knockoffs)) 
-- 🚗 **Lego DC Motor** (driving)  
-- 🔋 **2x 18650 Li-ion battery pack (7.4V)**  
-- 🧱 **LEGO Technic 42039 Chassis**  
-- 📱 **Android device** with Bluetooth serial controller (works better on Android, but Dabble app can be configured on iphone too)
+🔄 Motor & Power Schematic
+Left Motor  → IN1, IN2 on L298N  
+Right Motor → IN3, IN4 on L298N  
+ENA/ENB     → Connected to Arduino D9/D10 for PWM control (optional)  
+Bluetooth TX → Arduino RX  
+Bluetooth RX → Arduino TX  
+L298N VCC   → Battery +  
+L298N GND   → Battery - and Arduino GND  
 
----
+Example wiring:
 
-## ⚙️ Wiring Schematics
-![buttonsLR](https://github.com/user-attachments/assets/2e4d7d4e-328a-4f83-b655-cd2486d4a4cb)
-<img width="989" alt="bltCar" src="https://github.com/user-attachments/assets/ba9621ff-ebb3-4107-84a1-5d0cc7524afd" />
-<img width="732" alt="  2025-04-24 at 11 46 37 AM" src="https://github.com/user-attachments/assets/3861884f-0e91-4a48-a7c9-81120afd7546" />
+IN1 = D3  
+IN2 = D4  
+IN3 = D5  
+IN4 = D6  
 
-### 🧠 Steering + Logic Circuit
+⸻
 
-![Servo + Button Schematic](insert-your-image-path-1)
+🎥 Prototype Preview
 
-### 🔋 Full Power & Motor Driver
+![IMG_3857](https://github.com/user-attachments/assets/99c1587c-4a93-4a19-a6c8-03fb5fad79c0)
 
-![Motor Driver Schematic](insert-your-image-path-2)
 
----
+Working bltTank with rugged track movement via dual DC motors.
 
-## 🎥 Prototype Preview
+⸻
+🧠 Educational Value
+	•	🤖 Understand dual motor tank steering logic
+	•	🔁 Practice serial communication and command parsing
+	•	🔌 Integrate Bluetooth, PWM, and power routing
+	•	🧱 Experiment with platform portability between tank and car designs
+	•	📱 Design custom UIs for robotic control
 
-![Working Demo Snapshot](insert-your-image-path-3)
 
-Real Arduino Nano-based prototype controlling motor/steering through Bluetooth serial commands.
 
----
 
-## 📲 Control Workflow
-
-1. **Pair your Android phone** with the HM-10/HC-05 module  
-2. **Launch Bluetooth serial controller app**  
-3. Send characters like:
-   - `"f"` → Forward  
-   - `"b"` → Backward  
-   - `"l"` / `"R"` → Steering toggle  
-   - `"s"` → Stop  
-
-Arduino parses these to update motor/servo states.
-
----
-
-## 🧠 Educational Value
-
-- 🔌 Learn BLE communication via HM-10  
-- 🧭 Implement serial parsing in embedded C  
-- 🔄 Control servo and DC motors together  
-- 🧱 Repurpose LEGO Technic into a robotics platform  
-- 🎮 Create your own control protocol
