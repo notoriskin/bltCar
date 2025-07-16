@@ -45,6 +45,8 @@ This DIY smart car project enables remote steering and movement via a mobile dev
 ## 🎥 Prototype Preview
 
 ![Working Demo Snapshot](insert-your-image-path-3)
+![IMG_4725](https://github.com/user-attachments/assets/dba7a781-966f-4cd5-8355-3878f59b8cca)
+
 
 Real Arduino Nano-based prototype controlling motor/steering through Bluetooth serial commands.
 
